@@ -1,5 +1,6 @@
 function validAnagram(str1, str2) {
   // add whatever parameters you deem necessary - good luck!
+
   // 두 문자열을 입력받는다.
   // 애너그램인지, 아닌지를 Boolean으로 리턴한다.
   // 두 str의 빈도수를 오브젝트로 저장하자.
