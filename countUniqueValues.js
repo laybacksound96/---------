@@ -9,9 +9,9 @@ but in will always be sorted
 function countUniqueValues(arrayParam) {
   const aa = {};
   for (var i = 0; i < arrayParam.length; i++) {
-    arrayParam[i] ? (arrayParam += 1) : (arrayParam = 0);
+    aa[i] ? (aa[i] += 1) : (aa = 0);
+    console.log(aa);
   }
-  console.log(arrayParam);
 }
 
 countUniqueValues([1, 1, 1, 1, 1, 2]); // => 2
