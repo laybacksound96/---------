@@ -1,4 +1,6 @@
-/*
+function sameFrequency(num1, num2) {
+  // good luck. Add any arguments you deem necessary.
+  /*
 Frequency Counter - sameFrequency
 ---------------------------------
 
@@ -12,10 +14,10 @@ Time: O(N)
 
 Sample Input:
 
-1) sameFrequency(182,281) // true
-2) sameFrequency(34,14) // false
-3) sameFrequency(3589578, 5879385) // true
-4) sameFrequency(22,222) // false
+1) console.log(sameFrequency(182,281)) // true
+2) console.log(sameFrequency(34,14) )// false
+3) console.log(sameFrequency(3589578,) 5879385) // true
+4) console.log(sameFrequency(22,222) )// false
 
 Q. 각 숫자의 자릿수의 빈도수가 같은지 확인하는 방법을 찾아보세요.
 
@@ -49,15 +51,27 @@ frequency counter를 어떻게 적용시킬 것인가?
 3) 자리수를 키로, 곱해진 값을 밸류로 오브젝트에 할당
 4) 두 오브젝트의 키값에 할당된 밸류들이 같은지 검사
 
-A. 182 -> {1:1, 8:1, 2:1}?
-B. 182 -> {100:1,10:8,1:2} 
 
-182 -> 1*100 + 8*10 + 2*1 
-281 -> 2*100 + 8*10 + 1*1
 
 
 */
 
-function sameFrequency(num1, num2) {
-  // good luck. Add any arguments you deem necessary.
+  function frequencyCounter(number) {
+    let num1 = {};
+    while (number > 0) {
+      num1[number % 10] ? (num1[number % 10] += 1) : (num1[number % 10] = 1);
+      number = (number - (number % 10)) / 10;
+    }
+    return num1;
+  }
+
+  const n1 = frequencyCounter(num1);
+  const n2 = frequencyCounter(num2);
+
+  for (var i = 1; i < 10; i++) {
+    if (n1[i] !== n2[i]) {
+      return false;
+    }
+  }
+  return true;
 }
