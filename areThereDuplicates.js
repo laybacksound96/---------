@@ -11,3 +11,21 @@ areThereDuplicates(1, 2, 2) // true
 areThereDuplicates('a', 'b', 'c', 'a') // true
 
 */
+function areThereDuplicates(...rest) {
+  // good luck. (supply any arguments you deem necessary.)
+  var left = 0;
+  var right = 1;
+  while (left < right) {
+    if (rest[left] === rest[right]) {
+      return true;
+    } else if (right >= rest.length) {
+      return false;
+    } else if (right === rest.length - 1) {
+      left++;
+      right = left + 1;
+    } else {
+      right++;
+    }
+  }
+  return false;
+}
