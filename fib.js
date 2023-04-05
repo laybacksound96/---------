@@ -15,6 +15,21 @@ to the sum of the previous two numbers.
 파보나치 수열은 1, 1, 2, 3, 5, 8, ...과 같이 시작값이 1과 1이며,
 이후 모든 숫자가 이전 두 숫자의 합과 같은 수열입니다.
 */
-function fib() {
-  // add whatever parameters you deem necessary - good luck!
+function fib(n) {
+  let firstNum = 0;
+  let secondNum = 1;
+  let count = 0;
+  function innerFib(n) {
+    if (count === n) {
+      return;
+    }
+    count++;
+    const firstNumCopy = firstNum;
+    firstNum = secondNum;
+    secondNum += firstNumCopy;
+    return innerFib(n);
+  }
+  innerFib(n);
+  return firstNum;
 }
+fib(28);
